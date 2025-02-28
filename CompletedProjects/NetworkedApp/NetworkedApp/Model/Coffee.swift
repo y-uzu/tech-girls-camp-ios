@@ -1,10 +1,3 @@
-//
-//  Coffee.swift
-//  CoffeeApp
-//
-//  CompletedProjects
-//
-
 import Foundation
 
 struct Coffee: Decodable, Identifiable {

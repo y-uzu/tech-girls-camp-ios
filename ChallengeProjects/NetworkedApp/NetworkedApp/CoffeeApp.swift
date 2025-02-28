@@ -1,10 +1,3 @@
-//
-//  CoffeeApp.swift
-//  CoffeeApp
-//
-//  ChallengeProjects
-//
-
 import SwiftUI
 
 @main

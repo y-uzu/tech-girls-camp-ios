@@ -1,10 +1,3 @@
-//
-//  CoffeeDetailView.swift
-//  CoffeeApp
-//
-//  ChallengeProjects
-//
-
 import SwiftUI
 
 struct CoffeeDetailView: View {

@@ -1,10 +1,3 @@
-//
-//  CoffeeListView.swift
-//  CoffeeApp
-//
-//  ChallengeProjects
-//
-
 import SwiftUI
 
 struct CoffeeListView: View {
