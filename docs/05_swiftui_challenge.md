@@ -22,15 +22,23 @@ VStack, HStack, ZStack を使い、指定されたレイアウトを再現して
 📁 ChallengeProjects/
   ├── 📂 SwiftUIChallenge/      # チャレンジのスタート用プロジェクト
   │   ├── SwiftUIChallenge.xcodeproj
-  │   ├── ContentView.swift
-  │   ├── ChallengeViews.swift  # ここに課題を実装する
+  │   ├── SwiftUIChallengeApp.swift
+  │   ├── aView.swift           # ここに課題を実装する
+  │   ├── bView.swift           # ここに課題を実装する
+  │   ├── cView.swift           # ここに課題を実装する
+  │   ├── dView.swift           # ここに課題を実装する
+  │   ├── eView.swift           # ここに課題を実装する
   │   ├── README.md (この説明ファイル)
   │
 📁 CompletedProjects/
   ├── 📂 SwiftUIChallenge/      # 完成版プロジェクト
   │   ├── SwiftUIChallenge.xcodeproj
-  │   ├── ContentView.swift
-  │   ├── ChallengeViews.swift  # 解答例が記述されている
+  │   ├── SwiftUIChallengeApp.swift
+  │   ├── aView.swift           # 解答例が記述されている
+  │   ├── bView.swift           # 解答例が記述されている
+  │   ├── cView.swift           # 解答例が記述されている
+  │   ├── dView.swift           # 解答例が記述されている
+  │   ├── eView.swift           # 解答例が記述されている
   │   ├── README.md
 ```
 
