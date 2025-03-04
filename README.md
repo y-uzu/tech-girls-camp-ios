@@ -23,12 +23,11 @@
 3. [最初のアプリを作ってみよう](./docs/03_first_app.md)  
 4. [SwiftUIの基本を学ぼう](./docs/04_swiftui_basics.md)  
 5. [SwiftUI Challenge](./docs/05_swiftui_challenge.md)  
-6. [SwiftUI Challenge 解答](./docs/06_challenge_answers.md)  
 
 ### 応用編
-7. [電卓アプリを作ってみよう](./docs/07_calculator_app.md)  
-8. [(座学)サーバーと通信するモバイルアプリ](./docs/08_network_intro.md)  
-9. [サーバーと通信するモバイルアプリを作ってみよう](./docs/09_networked_app.md)  
+6. [電卓アプリを作ってみよう](./docs/06_calculator_app.md)  
+7. [(座学)サーバーと通信するモバイルアプリ](./docs/07_network_intro.md)  
+8. [サーバーと通信するモバイルアプリを作ってみよう](./docs/08_networked_app.md)  
 
 ---
 
