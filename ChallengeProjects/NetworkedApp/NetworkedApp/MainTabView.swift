@@ -1,10 +1,3 @@
-//
-//  MainTabView.swift
-//  CoffeeApp
-//
-//  ChallengeProjects
-//
-
 import SwiftUI
 
 struct MainTabView: View {

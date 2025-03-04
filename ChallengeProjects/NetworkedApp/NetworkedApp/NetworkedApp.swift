@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct CoffeeApp: App {
+struct NetworkedApp: App {
     var body: some Scene {
         WindowGroup {
             CoffeeItemView()
