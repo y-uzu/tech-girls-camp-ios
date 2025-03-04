@@ -243,6 +243,8 @@ struct CoffeeListView: View {
         ingredients: ["Coffee", "Milk"],
         image: URL(string: "https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&q=80&w=1887")!
     )
+    
+    // ...
 
     var body: some View {
         ScrollView {
@@ -252,6 +254,8 @@ struct CoffeeListView: View {
 
                 CoffeeItemView(coffee: coffee2)
                     .padding(.horizontal)
+                    
+                // ...
             }
             .padding(.vertical)
         }
@@ -285,4 +289,4 @@ struct NetworkedApp: App {
 現在は、コーヒーアイテムを **手動で 5つ** 並べています。
 次のステップでは、 **`ForEach` を使って自動的にリストを作成** できるようにします！
 
-➡️ [Step 2 - ForEachでまとめる](../Step2.md)
+➡️ [Step 2 - ForEach を使ってリストを整理する](../Step2.md)

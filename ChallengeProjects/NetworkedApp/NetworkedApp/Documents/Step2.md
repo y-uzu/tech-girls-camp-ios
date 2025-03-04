@@ -1,167 +1,118 @@
-# Step2: 複数のアイテムをリスト形式で表示してみよう
+# Step 2 - ForEach を使ってリストを整理する
 
-## 課題の説明
-
-**Step2**では、前のステップで作成した`CoffeeItemView`を複数表示するリストビューを構築します。  
-リストはスクロール可能で、`ScrollView`と`LazyVStack`を使って効率的にアイテムを配置します。  
-また、リスト表示に使うための`coffees`配列データを用意します。
-
----
-
-## 目標
-
-1. 複数のCoffeeItemViewをリスト形式で表示する。
-2. ScrollViewとLazyVStackを使用して、効率的かつスクロール可能なリストを作成する。
-3. Coffee構造体の配列データからリストを動的に生成する。
-
+## 目的
+Step 1 では、5つの `CoffeeItemView` を **1つずつ手書き** で並べました。  
+しかし、実際のアプリでは **数十個、数百個のデータ** を表示することがあります。  
+手作業で1つずつ書くのは大変なので、**ForEach を使ってリストを自動生成** する方法を学びます。  
 
 ---
 
-## ScrollViewとLazyVStackの説明
-
-### ScrollView
-- スクロール可能なコンテンツを表示するためのコンテナビュー。
-- **特徴**:
-  - 子ビューが画面に収まりきらない場合にスクロールできる。
-  - 垂直方向（`vertical`）または水平方向（`horizontal`）にスクロール可能。
-
-### LazyVStack
-- 縦方向（垂直）のリストを効率的に表示するためのビュー。
-- **特徴**:
-  - 表示されている範囲のアイテムだけをメモリにロードする。
-  - リストが大きくなってもパフォーマンスが低下しにくい。
-
+## 📌 やること
+- `coffees` 配列を作成し、すべてのデータを **1つの変数で管理**
+- `ForEach` を使い、**リストをシンプルに記述**
+- `LazyVStack` 内で `ForEach` を利用し、**コードの重複をなくす**
+- **データの追加・変更を簡単にする**
 
 ---
 
-## ヒント
+## 🤔 なぜ ForEach を使うのか？
+現在の `CoffeeListView` では、次のように **同じようなコードを繰り返し書いています**。
 
-1. `coffees`配列を作成する
-   - 複数の`Coffee`オブジェクトを格納する配列を`CoffeeListView`内に用意します。
-    - 例:
-    ```swift
-    let coffees = [
-        Coffee(id: 1, title: "Black Coffee", description: "Simple and classic.", ingredients: ["Coffee"], image: URL(string: "https://example.com/coffee1.jpg")!),
-        Coffee(id: 2, title: "Latte", description: "Smooth and creamy.", ingredients: ["Espresso", "Milk"], image: URL(string: "https://example.com/coffee2.jpg")!),
-        Coffee(id: 3, title: "Cappuccino", description: "Rich and foamy.", ingredients: ["Espresso", "Milk Foam"], image: URL(string: "https://example.com/coffee3.jpg")!)
-    ]
-    ```
+```swift
+CoffeeItemView(coffee: coffee1)
+    .padding(.horizontal)
 
-2. `ScrollView` でスクロール可能にする
-    - アイテムが画面に収まりきらない場合にスクロールできるコンテナビューです。
-    - 例:
-    ```swift
-    ScrollView {
-        // 中にスクロールするコンテンツを配置
-    }
-    ```
+CoffeeItemView(coffee: coffee2)
+    .padding(.horizontal)
 
-3. `LazyVStack` で効率的に配置する
-    - `LazyVStack` は、縦方向にリストを効率よく配置するビューです。
-    - 表示範囲外のビューはメモリに保持されず、必要になったときに生成されます。
-    - 例:
-    ```swift
-    LazyVStack(spacing: 20) {
-        // 縦方向に間隔を20ポイントで配置
-    }
-    ```
+CoffeeItemView(coffee: coffee3)
+    .padding(.horizontal)
 
-4. **`ForEach`で動的にビューを生成**
-   - `coffees`配列を`ForEach`でループし、各`Coffee`オブジェクトに対応する`CoffeeItemView`を表示します。
-   - 配列データ（coffees）をループして、それぞれのアイテムを表示します。
-   - `Identifiable` プロトコルを実装した構造体を使うことで、簡単にループできます。
-   - 例:
-   ```swift
-    ForEach(coffees) { coffee in
-        CoffeeItemView(coffee: coffee)
-    }
-   ```
+CoffeeItemView(coffee: coffee4)
+    .padding(.horizontal)
 
+CoffeeItemView(coffee: coffee5)
+    .padding(.horizontal)
+```
+
+この方法には **2つの問題** があります。
+
+1. **コードの重複が多い**  
+   - ほぼ同じコードを何度も書いているため、追加・修正が大変です。
+
+2. **データの変更が面倒**  
+   - 新しいコーヒーを追加するたびに、1行ずつ手作業でコードを追加しなければなりません。
 
 ---
 
+## ✅ ForEach を使うとどうなる？
+SwiftUI の `ForEach` を使うと、次のように **1行のコードでリストを自動生成** できます。
 
-## 実装手順
+```swift
+ForEach(coffees) { coffee in
+    CoffeeItemView(coffee: coffee)
+        .padding(.horizontal)
+}
+```
 
-### 1: `coffees`配列の作成
+このコードは、`coffees` 配列の **すべてのデータを自動で処理** し、  
+**1つずつ `CoffeeItemView` に渡して表示** してくれます。
 
-- 複数の`Coffee`オブジェクトを含む配列を`CoffeeListView`内に定義します。
+これにより、**新しいコーヒーを追加するときは、配列にデータを増やすだけ！**  
+コードを手作業で増やす必要がなくなります。
+
+---
+
+## 🛠 実装手順
+
+### 1. `coffees` 配列を作成する
+Step 1 では、`coffee1` 〜 `coffee5` の **5つの変数** を用意しました。  
+しかし、リストにするなら配列として管理したほうがわかりやすいです。
+
+次のように、`coffees` という配列を作り、データをまとめます。
 
 ```swift
 let coffees: [Coffee] = [
-    Coffee(
-        id: 1,
-        title: "Black Coffee",
-        description: "Svart kaffe är så enkelt som det kan bli med malda kaffebönor dränkta i hett vatten, serverat varmt.",
-        ingredients: ["Coffee"],
-        image: URL(string: "https://images.unsplash.com/photo-1494314671902-399b18174975?auto=format&fit=crop&q=80&w=1887")!
-    ),
-    Coffee(
-        id: 2,
-        title: "Latte",
-        description: "Smooth and creamy.",
-        ingredients: ["Espresso", "Milk"],
-        image: URL(string: "https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&q=80&w=1887")!
-    ),
-
-    ...
+    Coffee(id: 1, title: "Black Coffee", description: "Simple and classic.", ingredients: ["Coffee"], image: URL(string: "https://images.unsplash.com/photo-1494314671902-399b18174975?auto=format&fit=crop&q=80&w=1887")!),
+    Coffee(id: 2, title: "Latte", description: "Smooth and creamy coffee with milk.", ingredients: ["Espresso", "Milk"], image: URL(string: "https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&q=80&w=1887")!),
+    Coffee(id: 3, title: "Cappuccino", description: "Espresso, hot milk, and steamed milk foam.", ingredients: ["Espresso", "Milk Foam"], image: URL(string: "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&q=80&w=1887")!),
+    Coffee(id: 4, title: "Mocha", description: "Espresso with chocolate and steamed milk.", ingredients: ["Espresso", "Chocolate", "Milk"], image: URL(string: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&q=80&w=1887")!),
+    Coffee(id: 5, title: "Espresso", description: "Strong and rich coffee.", ingredients: ["Espresso"], image: URL(string: "https://images.unsplash.com/photo-1517705008128-361805f42e86?auto=format&fit=crop&q=80&w=1887")!)
 ]
 ```
 
 ---
 
-### 2: `CoffeeListView`を作成
+### 2. `ForEach` でリストを生成
+Step 1 では、1つずつ手書きで `CoffeeItemView` を追加していました。  
+これを `ForEach` を使って自動化します。
 
-- `ScrollView`と`LazyVStack`を利用して、`coffees`配列からアイテムを動的に生成します。
+```swift
+LazyVStack(spacing: 20) {
+    ForEach(coffees) { coffee in
+        CoffeeItemView(coffee: coffee)
+            .padding(.horizontal)
+    }
+}
+```
 
 ---
 
-## 完成後のコード
-
-### `CoffeeListView`
+### 3. `CoffeeListView` に反映
+`coffees` 配列と `ForEach` を組み合わせて、リスト全体を構築します。
 
 ```swift
 import SwiftUI
 
 struct CoffeeListView: View {
     let coffees: [Coffee] = [
-        Coffee(
-            id: 1,
-            title: "Black Coffee",
-            description: "Svart kaffe är så enkelt som det kan bli med malda kaffebönor dränkta i hett vatten, serverat varmt.",
-            ingredients: ["Coffee"],
-            image: URL(string: "https://images.unsplash.com/photo-1494314671902-399b18174975?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")!
-        ),
-        Coffee(
-            id: 2,
-            title: "Black Coffee",
-            description: "Svart kaffe är så enkelt som det kan bli med malda kaffebönor dränkta i hett vatten, serverat varmt.",
-            ingredients: ["Coffee"],
-            image: URL(string: "https://images.unsplash.com/photo-1494314671902-399b18174975?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")!
-        ),
-        Coffee(
-            id: 3,
-            title: "Black Coffee",
-            description: "Svart kaffe är så enkelt som det kan bli med malda kaffebönor dränkta i hett vatten, serverat varmt.",
-            ingredients: ["Coffee"],
-            image: URL(string: "https://images.unsplash.com/photo-1494314671902-399b18174975?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")!
-        ),
-        Coffee(
-            id: 4,
-            title: "Black Coffee",
-            description: "Svart kaffe är så enkelt som det kan bli med malda kaffebönor dränkta i hett vatten, serverat varmt.",
-            ingredients: ["Coffee"],
-            image: URL(string: "https://images.unsplash.com/photo-1494314671902-399b18174975?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")!
-        ),
-        Coffee(
-            id: 5,
-            title: "Black Coffee",
-            description: "Svart kaffe är så enkelt som det kan bli med malda kaffebönor dränkta i hett vatten, serverat varmt.",
-            ingredients: ["Coffee"],
-            image: URL(string: "https://images.unsplash.com/photo-1494314671902-399b18174975?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")!
-        ),
+        Coffee(id: 1, title: "Black Coffee", description: "Simple and classic.", ingredients: ["Coffee"], image: URL(string: "https://images.unsplash.com/photo-1494314671902-399b18174975?auto=format&fit=crop&q=80&w=1887")!),
+        Coffee(id: 2, title: "Latte", description: "Smooth and creamy coffee with milk.", ingredients: ["Espresso", "Milk"], image: URL(string: "https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&q=80&w=1887")!),
+        Coffee(id: 3, title: "Cappuccino", description: "Espresso, hot milk, and steamed milk foam.", ingredients: ["Espresso", "Milk Foam"], image: URL(string: "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&q=80&w=1887")!),
+        Coffee(id: 4, title: "Mocha", description: "Espresso with chocolate and steamed milk.", ingredients: ["Espresso", "Chocolate", "Milk"], image: URL(string: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&q=80&w=1887")!),
+        Coffee(id: 5, title: "Espresso", description: "Strong and rich coffee.", ingredients: ["Espresso"], image: URL(string: "https://images.unsplash.com/photo-1517705008128-361805f42e86?auto=format&fit=crop&q=80&w=1887")!)
     ]
-    
+
     var body: some View {
         ScrollView {
             LazyVStack(spacing: 20) {
@@ -182,88 +133,14 @@ struct CoffeeListView: View {
 
 ---
 
-### `CoffeeItemView`
-
-```swift
-import SwiftUI
-
-struct CoffeeItemView: View {
-    let coffee: Coffee
-    
-    @State var isFavorite: Bool = false
-    
-    var body: some View {
-        VStack(alignment: .leading) {
-            AsyncImage(url: coffee.image) { phase in
-                switch phase {
-                case .empty:
-                    ProgressView()
-                case .success(let image):
-                    image
-                        .resizable()
-                        .scaledToFill()
-                case .failure:
-                    Image(systemName: "photo")
-                        .imageScale(.large)
-                        .foregroundStyle(.secondary)
-                @unknown default:
-                    EmptyView()
-                }
-            }
-            .frame(height: 200)
-            .frame(maxWidth: .infinity)
-            
-            VStack(alignment: .leading, spacing: 10) {
-                HStack {
-                    Text(coffee.title)
-                        .font(.title)
-                    Spacer()
-                    Button(action: {
-                        isFavorite.toggle()
-                    }) {
-                        Image(systemName: isFavorite ? "star.fill" : "star")
-                    }
-                    
-                }
-                Text(coffee.description)
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
-                HStack {
-                    ForEach(coffee.ingredients, id: \.self) { ingredient in
-                        Text(ingredient)
-                            .italic()
-                            .foregroundStyle(.secondary)
-                    }
-                }
-                .frame(maxWidth: .infinity, alignment: .trailing)
-            }
-            .foregroundColor(.white)
-            .padding()
-            .background(Color.black.opacity(0.5))
-            .background(.ultraThinMaterial)
-        }
-        .cornerRadius(10)
-    }
-}
-
-#Preview {
-    let coffee = Coffee(
-        id: 1,
-        title: "Black Coffee",
-        description: "Svart kaffe är så enkelt som det kan bli med malda kaffebönor dränkta i hett vatten, serverat varmt. Och om du vill låta fancy kan du kalla svart kaffe med sitt rätta namn: café noir.",
-        ingredients: ["Coffee"],
-        image: URL(string: "https://images.unsplash.com/photo-1494314671902-399b18174975?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")!
-    )
-    CoffeeItemView(coffee: coffee)
-        .padding()
-}
-```
+### `NetworkedApp` の変更
+エントリーポイント (`NetworkedApp`) で `CoffeeListView` を使うようにします。
 
 ```swift
 import SwiftUI
 
 @main
-struct CoffeeApp: App {
+struct NetworkedApp: App {
     var body: some Scene {
         WindowGroup {
             CoffeeListView()
@@ -272,3 +149,9 @@ struct CoffeeApp: App {
 }
 ```
 
+---
+
+## ⏭️ 次のステップ
+次のステップでは、データを **手書きではなく、APIから取得** する方法を学びます。
+
+➡️ [Step 3 - APIからデータを入れる](../Step3.md)
