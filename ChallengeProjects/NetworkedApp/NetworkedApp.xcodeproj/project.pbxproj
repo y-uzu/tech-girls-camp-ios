@@ -16,7 +16,7 @@
 			membershipExceptions = (
 				Documents/Step1.md,
 				Documents/Step3.md,
-				Documents/Step4.md,
+				Documents/Step5.md,
 			);
 			target = 6FC493622CEC5569003A7DA5 /* NetworkedApp */;
 		};
@@ -29,7 +29,7 @@
 			membershipExceptions = (
 				Documents/Step1.md,
 				Documents/Step3.md,
-				Documents/Step4.md,
+				Documents/Step5.md,
 			);
 		};
 /* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
