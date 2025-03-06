@@ -133,4 +133,4 @@ open ChallengeProjects/SwiftUIChallenge/SwiftUIChallenge.xcodeproj
 課題が終わったら、次のステップで解答例を確認してみましょう。  
 自分のコードと比べて、違いを見つけることも学習になります。
 
-➡️ [次へ: SwiftUI Challenge 解答](./06_swiftui_challenge_answers.md)
+➡️ [次へ: SwiftUI Challenge 解答](./05_swiftui_challenge_answers.md)
