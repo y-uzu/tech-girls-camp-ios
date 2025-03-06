@@ -186,6 +186,8 @@ struct NetworkedApp: App {
 }
 ```
 
+<img width="300" src="../../../../docs/images/08_step3.png">
+
 ---
 
 ## ✅ 完成後のコード
@@ -229,6 +231,13 @@ struct CoffeeListView: View {
                 print("Failed to fetch coffees: \(error)")
             }
         }
+    }
+
+    func getCoffees() async throws -> [Coffee] {
+        guard let url = URL(string: "https://api.sampleapis.com/coffee/hot") else { return [] }
+        let (data, _) = try await URLSession.shared.data(from: url)
+        let coffees = try JSONDecoder().decode([Coffee].self, from: data)
+        return coffees
     }
 }
 
