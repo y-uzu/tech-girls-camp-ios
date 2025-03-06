@@ -16,7 +16,7 @@ Xcode は Apple が提供する統合開発環境（IDE）で、iPhoneアプリ�
 
 Xcode は、Apple が開発・提供している iOSアプリ開発のための統合開発環境（IDE）です。  
 
-![](images/02_xcode_logo.png)
+<img width="100" src="images/02_xcode_logo.png">
 
 Xcode を使うことで、以下のような作業ができます。
 
@@ -29,7 +29,7 @@ Xcode は Mac でのみ利用可能で、Windows では動作しません。
 
 Link: https://developer.apple.com/jp/xcode/
 
-![](images/02_xcode_screen.png)
+<img width="700" src="images/02_xcode_screen.png">
 
 ---
 
@@ -61,7 +61,7 @@ xcode-select --install
 1. Xcode を起動  
 2. 「Create a new Xcode project」を選択  or 「Xcode > File > Project」を選択
 
-![](images/02_1.png)
+<img width="700" src="images/02_1.png">
 
 ### 2. プロジェクトの設定
 プロジェクト作成画面が表示されたら、以下のように設定します。
@@ -79,7 +79,7 @@ xcode-select --install
 プロジェクトが作成されると、Xcode のメイン画面が表示されます。  
 これで iOS アプリの開発準備が整いました。  
 
-![](images/02_xcode_main.png)
+<img width="700" src="images/02_xcode_main.png">
 
 ---
 
@@ -92,17 +92,17 @@ Xcode には iOS シミュレーターという仮想デバイスが用意され
 1. Xcode 上部のツールバーにある「実行ターゲット（iPhone 16 Pro など）」をクリック  
 2. 「iOS Simulator」から好きな iPhone のモデルを選択  
 
-![](images/02_xcode_select_simurator.png)
+<img width="700" src="images/02_xcode_select_simurator.png">
 
 ### 2. アプリを実行する
 1. 上部の「▶︎（再生ボタン）」をクリック（または `Command + R` を押す）  
 2. シミュレーターが起動し、アプリが動作する  
 
-![](images/02_xcode_run_button.png)
+<img width="600" src="images/02_xcode_run_button.png">
 
 画面に「Hello, world!」という文字が表示されれば成功です 🎉
 
-![](images/02_simurator_hello_world.png)
+<img width="300" src="images/02_simurator_hello_world.png">
 
 ---
 
