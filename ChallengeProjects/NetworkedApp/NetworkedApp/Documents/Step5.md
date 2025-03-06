@@ -166,4 +166,5 @@ struct NetworkedApp: App {
 
 ---
 
-## ⏭️ これでStepは終了です。
+## ⏭️[もっとやってみよう](../../../../docs/08_networked_app.md#もっとやってみよう)
+
