@@ -19,6 +19,8 @@ SwiftUIを使うと、簡単にUIを構築できます。
 SwiftUIでは、画面の要素を並べるために  
 **VStack（垂直）、HStack（水平）、ZStack（重ねる）** の3つのレイアウトコンテナを使います。
 
+SampleAppのContentViewを自由に書き換えてSwiftUIでのレイアウトを学んでみよう。
+
 ---
 
 ## 🏗 VStack（縦に並べる）
@@ -39,6 +41,8 @@ struct ContentView: View {
 - VStack の中に `Text()` を2つ配置すると、**縦に並ぶ**
 - `VStack { ... }` の中に複数のビューを入れることで、簡単にレイアウトできる
 
+<img width="700" src="images/04_vstack.png">
+
 ### 間隔を調整する
 `spacing` を指定すると、要素の間隔を変更できます。
 
@@ -48,6 +52,8 @@ VStack(spacing: 20) {
     Text("下のテキスト")
 }
 ```
+
+<img width="700" src="images/04_vstack_spacing.png">
 
 ---
 
@@ -70,6 +76,8 @@ struct ContentView: View {
 - `HStack` を使うと、要素が **水平方向に並ぶ**
 - `VStack` と組み合わせてレイアウトを作ることが多い
 
+<img width="700" src="images/04_hstack.png">
+
 ### 間隔を調整する
 `spacing` を使って、要素の間隔を調整できます。
 
@@ -80,6 +88,8 @@ HStack(spacing: 30) {
     Text("右")
 }
 ```
+
+<img width="700" src="images/04_hstack_spacing.png">
 
 ---
 
@@ -104,6 +114,8 @@ struct ContentView: View {
 - `ZStack` の中にあるビューは **上から順に** 配置される
 - **背景とテキスト** のように、要素を重ねたいときに使う
 
+<img width="700" src="images/04_zstack.png">
+
 ### 配置を調整する
 `alignment` を指定すると、要素を揃えることができる。
 
@@ -116,6 +128,8 @@ ZStack(alignment: .topLeading) {
         .foregroundColor(.white)
 }
 ```
+
+<img width="700" src="images/04_zstack_alignment.png">
 
 ---
 
@@ -150,6 +164,8 @@ struct ContentView: View {
     }
 }
 ```
+
+<img width="700" src="images/04_combination_stack.png">
 
 ---
 
