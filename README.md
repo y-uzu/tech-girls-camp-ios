@@ -1,4 +1,6 @@
 
+![](docs/images/00_key_visual.png)
+
 # 🏁 STORES Tech Girls Camp - Day 1 iOSアプリ開発
 
 このワークショップでは、📱 iPhoneアプリを作る楽しさを体験できます。  <br>
