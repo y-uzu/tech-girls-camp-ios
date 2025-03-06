@@ -102,6 +102,10 @@ Xcode の画面は **大きく5つのエリア** に分かれています。
 
 <img width="700" src="images/02_xcode_ui_overview.png">
 
+もし各Areaが表示されていな場合、以下のアイコンをタップしてみてください。
+
+<img width="700" src="images/02_xcode_ui_hiddon_button.png">
+
 ### 📂 **Navigator Area（ナビゲーターエリア）**
 画面の **左側** にあるエリアで、プロジェクト内のファイルを管理します。
 
