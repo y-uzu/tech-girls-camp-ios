@@ -4,7 +4,7 @@
 SwiftUI を使い、ユーザーが入力した数値を足し算・引き算できるアプリを作ります。  
 Xcode のシミュレーターで動かしながら、アプリの動作を確認してみましょう。
 
-<img width="500" src="images/06_calculator_app_completed.png">
+<img width="300" src="images/06_calculator_app_completed.png">
 
 ---
 
