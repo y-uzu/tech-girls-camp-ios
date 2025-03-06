@@ -39,6 +39,8 @@ Step 0 では、 **1つのコーヒーアイテム** を画面に表示しまし
 +----------------------+
 ```
 
+<img width="300" src="../../../../docs/images/08_step1.png">
+
 ---
 
 ## 🏗 実装手順
@@ -76,35 +78,64 @@ struct CoffeeItemView: View {
 - `let coffee: Coffee` に変更  
 - これにより、**外部からデータを受け取ることができる**
 
+この変更に伴って、Preview の記述も変更する必要があります。
+
+```swift
+#Preview {
+    let coffee1 = Coffee(
+        id: 1,
+        title: "Black Coffee",
+        description: "Svart kaffe är så enkelt som det kan bli med malda kaffebönor dränkta i hett vatten, serverat varmt.",
+        ingredients: ["Coffee"],
+        image: URL(string: "https://images.unsplash.com/photo-1494314671902-399b18174975?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")!
+    )
+
+    CoffeeItemView(coffee: coffee1)
+        .padding()
+}
+```
+
 ---
 
 ### 3. コーヒーデータを 5 つ用意する
 `CoffeeListView` の中に、**5つのコーヒーデータ** を定義します。
 
 ```swift
-import SwiftUI
-
 struct CoffeeListView: View {
     let coffee1 = Coffee(
         id: 1,
         title: "Black Coffee",
         description: "Svart kaffe är så enkelt som det kan bli med malda kaffebönor dränkta i hett vatten, serverat varmt.",
         ingredients: ["Coffee"],
-        image: URL(string: "https://images.unsplash.com/photo-1494314671902-399b18174975?auto=format&fit=crop&q=80&w=1887")!
+        image: URL(string: "https://images.unsplash.com/photo-1494314671902-399b18174975?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")!
     )
     let coffee2 = Coffee(
         id: 2,
-        title: "Latte",
-        description: "Smooth and creamy coffee with milk.",
-        ingredients: ["Coffee", "Milk"],
-        image: URL(string: "https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&q=80&w=1887")!
+        title: "Black Coffee",
+        description: "Svart kaffe är så enkelt som det kan bli med malda kaffebönor dränkta i hett vatten, serverat varmt.",
+        ingredients: ["Coffee"],
+        image: URL(string: "https://images.unsplash.com/photo-1494314671902-399b18174975?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")!
     )
     let coffee3 = Coffee(
         id: 3,
-        title: "Cappuccino",
-        description: "Espresso, hot milk, and steamed milk foam.",
-        ingredients: ["Coffee", "Milk Foam"],
-        image: URL(string: "https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&q=80&w=1887")!
+        title: "Black Coffee",
+        description: "Svart kaffe är så enkelt som det kan bli med malda kaffebönor dränkta i hett vatten, serverat varmt.",
+        ingredients: ["Coffee"],
+        image: URL(string: "https://images.unsplash.com/photo-1494314671902-399b18174975?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")!
+    )
+    let coffee4 = Coffee(
+            id: 4,
+            title: "Black Coffee",
+            description: "Svart kaffe är så enkelt som det kan bli med malda kaffebönor dränkta i hett vatten, serverat varmt.",
+            ingredients: ["Coffee"],
+            image: URL(string: "https://images.unsplash.com/photo-1494314671902-399b18174975?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")!
+        )
+    let coffee5 = Coffee(
+        id: 5,
+        title: "Black Coffee",
+        description: "Svart kaffe är så enkelt som det kan bli med malda kaffebönor dränkta i hett vatten, serverat varmt.",
+        ingredients: ["Coffee"],
+        image: URL(string: "https://images.unsplash.com/photo-1494314671902-399b18174975?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")!
     )
 ```
 
@@ -125,6 +156,12 @@ struct CoffeeListView: View {
                     .padding(.horizontal)
 
                 CoffeeItemView(coffee: coffee3)
+                    .padding(.horizontal)
+
+                CoffeeItemView(coffee: coffee4)
+                    .padding(.horizontal)
+
+                CoffeeItemView(coffee: coffee5)
                     .padding(.horizontal)
             }
             .padding(.vertical)
@@ -234,28 +271,54 @@ struct CoffeeListView: View {
         title: "Black Coffee",
         description: "Svart kaffe är så enkelt som det kan bli med malda kaffebönor dränkta i hett vatten, serverat varmt.",
         ingredients: ["Coffee"],
-        image: URL(string: "https://images.unsplash.com/photo-1494314671902-399b18174975?auto=format&fit=crop&q=80&w=1887")!
+        image: URL(string: "https://images.unsplash.com/photo-1494314671902-399b18174975?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")!
     )
     let coffee2 = Coffee(
         id: 2,
-        title: "Latte",
-        description: "Smooth and creamy coffee with milk.",
-        ingredients: ["Coffee", "Milk"],
-        image: URL(string: "https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&q=80&w=1887")!
+        title: "Black Coffee",
+        description: "Svart kaffe är så enkelt som det kan bli med malda kaffebönor dränkta i hett vatten, serverat varmt.",
+        ingredients: ["Coffee"],
+        image: URL(string: "https://images.unsplash.com/photo-1494314671902-399b18174975?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")!
     )
-    
-    // ...
-
+    let coffee3 = Coffee(
+        id: 3,
+        title: "Black Coffee",
+        description: "Svart kaffe är så enkelt som det kan bli med malda kaffebönor dränkta i hett vatten, serverat varmt.",
+        ingredients: ["Coffee"],
+        image: URL(string: "https://images.unsplash.com/photo-1494314671902-399b18174975?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")!
+    )
+    let coffee4 = Coffee(
+            id: 4,
+            title: "Black Coffee",
+            description: "Svart kaffe är så enkelt som det kan bli med malda kaffebönor dränkta i hett vatten, serverat varmt.",
+            ingredients: ["Coffee"],
+            image: URL(string: "https://images.unsplash.com/photo-1494314671902-399b18174975?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")!
+        )
+    let coffee5 = Coffee(
+        id: 5,
+        title: "Black Coffee",
+        description: "Svart kaffe är så enkelt som det kan bli med malda kaffebönor dränkta i hett vatten, serverat varmt.",
+        ingredients: ["Coffee"],
+        image: URL(string: "https://images.unsplash.com/photo-1494314671902-399b18174975?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")!
+    )
+   
     var body: some View {
         ScrollView {
             LazyVStack(spacing: 20) {
                 CoffeeItemView(coffee: coffee1)
                     .padding(.horizontal)
-
+                
                 CoffeeItemView(coffee: coffee2)
                     .padding(.horizontal)
-                    
-                // ...
+                
+                CoffeeItemView(coffee: coffee3)
+                    .padding(.horizontal)
+                
+                CoffeeItemView(coffee: coffee4)
+                    .padding(.horizontal)
+                
+                CoffeeItemView(coffee: coffee5)
+                    .padding(.horizontal)
             }
             .padding(.vertical)
         }
