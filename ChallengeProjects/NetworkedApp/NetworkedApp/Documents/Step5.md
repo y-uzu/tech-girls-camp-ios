@@ -166,5 +166,9 @@ struct NetworkedApp: App {
 
 ---
 
+これでStepは終わりです。
+
+ここからは自由に編集してみよう。
+
 ## ⏭️[もっとやってみよう](../../../../docs/08_networked_app.md#もっとやってみよう)
 
