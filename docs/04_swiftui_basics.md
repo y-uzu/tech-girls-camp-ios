@@ -16,6 +16,83 @@ SwiftUIを使うと、簡単にUIを構築できます。
 - よく使う Modifier の具体的なコード例を実践する  
 
 ---
+# 🎨 SwiftUI とは？  
+
+**SwiftUI** は、Apple が提供する **最新の UI フレームワーク** です。  
+これを使うと、**シンプルなコードで美しい iOS アプリ** を作成できます。  
+
+<img width="700" src="images/04_swiftui.png">
+
+Link: [SwiftUI](https://developer.apple.com/jp/xcode/swiftui/)
+
+---
+
+## 🎯 SwiftUI の特徴
+
+| 特徴 | 説明 |
+|------|------|
+| **シンプルなコード** | 簡潔なコードで UI を作成できる |
+| **リアルタイムプレビュー** | コードを変更すると、すぐにプレビューに反映される |
+| **宣言的な UI** | 「こう表示したい！」と書くだけで UI を作れる |
+| **すべての Apple プラットフォームで動作** | iPhone, iPad, Mac, Apple Watch などで使える |
+
+**💡 例えば、"Hello, SwiftUI!" を表示するには？**
+```swift
+import SwiftUI
+
+struct ContentView: View {
+    var body: some View {
+        Text("Hello, SwiftUI!")
+    }
+}
+```
+🔽 **たったこれだけで、画面にテキストを表示できます！**  
+
+---
+
+## 🛠 どうやって SwiftUI で UI を作るの？
+SwiftUI では、**ビュー（View）を組み合わせて画面を作成** します。  
+基本のビューには、以下のようなものがあります。
+
+| ビュー名 | 説明 |
+|---------|------|
+| `Text` | 文字を表示する |
+| `Image` | 画像を表示する |
+| `Button` | ボタンを作る |
+| `VStack` | 縦に並べる |
+| `HStack` | 横に並べる |
+| `ZStack` | 重ねる |
+
+例えば、次のコードは **ボタンをタップすると「こんにちは！」と表示** する例です。
+
+```swift
+import SwiftUI
+
+struct ContentView: View {
+    @State private var message = "Hello, SwiftUI!"
+
+    var body: some View {
+        VStack {
+            Text(message)
+                .font(.title)
+            
+            Button("ボタンを押す") {
+                message = "こんにちは！"
+            }
+            .padding()
+            .background(Color.blue)
+            .foregroundColor(.white)
+            .cornerRadius(10)
+        }
+    }
+}
+```
+
+<img width="700" src="images/04_swiftui_basic.gif">
+
+ボタンを押すと「こんにちは！」に変わる 🎉
+
+---
 
 ## 📚 SwiftUIのレイアウトコンテナ
 
