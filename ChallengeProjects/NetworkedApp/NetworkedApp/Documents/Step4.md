@@ -251,4 +251,4 @@ struct CoffeeDetailView: View {
 ## ⏭️ 次のステップ
 次は、 **タブを追加して、画面を切り替えられるようにする** 方法を学びます！
 
-➡️ [Step 5 - タブをつける](../Step5.md)
+➡️ [Step 5 - タブをつける](./Step5.md)

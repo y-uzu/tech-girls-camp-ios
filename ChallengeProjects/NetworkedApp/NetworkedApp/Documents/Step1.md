@@ -289,4 +289,4 @@ struct NetworkedApp: App {
 現在は、コーヒーアイテムを **手動で 5つ** 並べています。
 次のステップでは、 **`ForEach` を使って自動的にリストを作成** できるようにします！
 
-➡️ [Step 2 - ForEach を使ってリストを整理する](../Step2.md)
+➡️ [Step 2 - ForEach を使ってリストを整理する](./Step2.md)
