@@ -6,6 +6,8 @@ Step 2 では、手書きのデータを `coffees` 配列に入れて、それ�
 
 このステップでは、**インターネットを使って、サーバー上のデータを取得し、リストに表示する方法** を学びます。
 
+<img width="300" src="../../../../docs/images/08_step3.png">
+
 ---
 
 ## 📌 何をするの？
@@ -185,8 +187,6 @@ struct NetworkedApp: App {
     }
 }
 ```
-
-<img width="300" src="../../../../docs/images/08_step3.png">
 
 ---
 
