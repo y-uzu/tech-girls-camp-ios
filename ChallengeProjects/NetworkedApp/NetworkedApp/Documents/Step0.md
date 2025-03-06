@@ -24,6 +24,8 @@ open ChallengeProjects/NetworkedApp/NetworkedApp.xcodeproj
 - シミュレーターにアプリが表示される。
 - **コーヒーのカード** が 1 つ表示されていることを確認する。
 
+<img width="300" src="../../../../docs/images/08_step0.png">
+
 ---
 
 ## 🏗 どのように画面が表示されているのか？
