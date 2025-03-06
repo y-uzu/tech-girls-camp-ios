@@ -20,8 +20,12 @@ SwiftUI を使い、画面にテキストを表示するシンプルなアプリ
 1. Finder で `SapmleApp` のフォルダを開く  
 2. `SampleApp.xcodeproj` をダブルクリックして Xcode を起動  
 
+<img width="700" src="images/03_finder_sample.png">
+
 Xcode が開いたら、画面左側の「Navigator」から `ContentView.swift` を選択します。  
 このファイルがアプリのメイン画面を定義する SwiftUI のコードです。
+
+<img width="700" src="images/03_contentview_init.png">
 
 ---
 
@@ -34,8 +38,13 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            Image(systemName: "globe")
+                .imageScale(.large)
+                .foregroundStyle(.tint)
+            Text("Hello, world!")
+        }
+        .padding()
     }
 }
 
@@ -56,11 +65,11 @@ struct ContentView: View {
 - `var body: some View`  
   画面のレイアウトを指定する  
 
+- `VStack`  
+    {}内を縦に並べて表示する
+
 - `Text("Hello, world!")`  
   画面に「Hello, world!」という文字を表示する  
-
-- `.padding()`  
-  テキストの周りに余白を追加する  
 
 - `#Preview { ContentView() }`  
   Xcode のプレビュー機能で画面を確認するための設定  
@@ -74,8 +83,11 @@ Xcode には、SwiftUI の画面をすぐに確認できる「プレビュー」
 
 ### 1. プレビューを開く
 1. `ContentView.swift` を開く  
-2. 右上の「Resume」ボタンをクリック（または `Command + Option + P` を押す）  
+2. 右側のCanvasエリア下部にある「▶︎（再生ボタン）」をクリック（または `Command + Option + P` を押す）  
 3. 画面に「Hello, world!」が表示される  
+
+<img width="400" src="images/03_canvas_run.png">
+
 
 ### 2. プレビューが表示されない場合
 プレビューがうまく表示されない場合は、以下を試してみてください。
@@ -92,15 +104,28 @@ Xcode には、SwiftUI の画面をすぐに確認できる「プレビュー」
 `Text("Hello, world!")` の部分を `Text("こんにちは")` に書き換えてみましょう。
 
 ```swift
+import SwiftUI
+
 struct ContentView: View {
     var body: some View {
-        Text("こんにちは")
-            .padding()
+        VStack {
+            Image(systemName: "globe")
+                .imageScale(.large)
+                .foregroundStyle(.tint)
+            Text("こんにちは")
+        }
+        .padding()
     }
+}
+
+#Preview {
+    ContentView()
 }
 ```
 
 変更後に `Command + Option + P` を押すと、プレビューに「こんにちは」と表示されます。
+
+<img width="700" src="images/03_change_text.png">
 
 ---
 
@@ -110,13 +135,24 @@ struct ContentView: View {
 以下のように `.font()` や `.foregroundColor()` を追加してみましょう。
 
 ```swift
+import SwiftUI
+
 struct ContentView: View {
     var body: some View {
-        Text("こんにちは")
-            .font(.largeTitle)
-            .foregroundColor(.blue)
-            .padding()
+        VStack {
+            Image(systemName: "globe")
+                .imageScale(.large)
+                .foregroundStyle(.tint)
+            Text("こんにちは")
+                .font(.largeTitle)
+                .foregroundColor(.blue)
+        }
+        .padding()
     }
+}
+
+#Preview {
+    ContentView()
 }
 ```
 
@@ -124,6 +160,8 @@ struct ContentView: View {
 - `.foregroundColor(.blue)` → 文字の色を青にする  
 
 プレビューを更新すると、デザインが変わったことがわかります。
+
+<img width="700" src="images/03_change_modifier.png">
 
 ---
 
