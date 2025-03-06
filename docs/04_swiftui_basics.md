@@ -309,6 +309,8 @@ Toggle("トグルスイッチ", isOn: $toggleValue)
     .toggleStyle(SwitchToggleStyle(tint: .green))
 ```
 
+<img width="700" src="images/04_slider_toggle.png">
+
 ---
 
 ## 🔹 **透明度、回転、スケールの変更**
