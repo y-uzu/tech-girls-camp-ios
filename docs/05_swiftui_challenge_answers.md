@@ -5,7 +5,7 @@
 
 ---
 
-## ✅ 1. 縦に3つの色付き長方形を等間隔で配置
+## ✅ a. 縦に3つの色付き長方形を等間隔で配置
 
 ```swift
 #Preview {
@@ -27,9 +27,11 @@
 - Rectangle の fill で色を設定する  
 - frame でサイズを指定する  
 
+<img width="700" src="images/05_a_a.png">
+
 ---
 
-## ✅ 2. 二重に丸を配置
+## ✅ b. 二重に丸を配置
 
 ```swift
 #Preview {
@@ -48,9 +50,11 @@
 - Circle の fill で色を設定する  
 - frame を調整し、内側の丸を小さくする  
 
+<img width="700" src="images/05_b_a.png">
+
 ---
 
-## ✅ 3. テキストを四角形の左下に配置
+## ✅ c. テキストを四角形の左下に配置
 
 ```swift
 #Preview {
@@ -69,9 +73,11 @@
 - Rectangle を背景として配置する  
 - Text を white にして、見やすくする  
 
+<img width="700" src="images/05_c_a.png">
+
 ---
 
-## ✅ 4. 四角形の中に3つのテキストを等間隔に配置（異なるアライメント）
+## ✅ d. 四角形の中に3つのテキストを等間隔に配置（異なるアライメント）
 
 ```swift
 #Preview {
@@ -101,9 +107,11 @@
 - frame の alignment を `.leading`, `.center`, `.trailing` に設定する  
 - Text のサイズを変更し、違いを強調する  
 
+<img width="700" src="images/05_d_a.png">
+
 ---
 
-## ✅ 5. 商品アイテムのカードデザイン
+## ✅ e. 商品アイテムのカードデザイン
 
 ```swift
 #Preview {
@@ -130,6 +138,7 @@
 - AsyncImage を使って、Webから画像を読み込む  
 - cornerRadius や shadow で、デザインを整える  
 
+<img width="700" src="images/05_e_a.png">
 
 ---
 

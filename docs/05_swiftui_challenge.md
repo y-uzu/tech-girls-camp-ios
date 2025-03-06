@@ -70,6 +70,8 @@ open ChallengeProjects/SwiftUIChallenge/SwiftUIChallenge.xcodeproj
 
 ### **a. 縦に3つの色付き長方形を等間隔で配置**
 
+<img width="700" src="images/05_a_q.png">
+
 **ヒント**
 - VStack を使う
 - Rectangle を使って四角を作る
@@ -78,6 +80,8 @@ open ChallengeProjects/SwiftUIChallenge/SwiftUIChallenge.xcodeproj
 ---
 
 ### **b. 二重に丸を配置**
+
+<img width="700" src="images/05_b_q.png">
 
 **ヒント**
 - ZStack を使う
@@ -88,6 +92,8 @@ open ChallengeProjects/SwiftUIChallenge/SwiftUIChallenge.xcodeproj
 
 ### **c. テキストを四角形の左下に配置**
 
+<img width="700" src="images/05_c_q.png">
+
 **ヒント**
 - ZStack を使う
 - Rectangle を背景にする
@@ -96,6 +102,8 @@ open ChallengeProjects/SwiftUIChallenge/SwiftUIChallenge.xcodeproj
 ---
 
 ### **d. 四角形の中に3つのテキストを等間隔に配置（異なるアライメント）**
+
+<img width="700" src="images/05_d_q.png">
 
 **ヒント**
 - VStack を使う
@@ -110,6 +118,8 @@ open ChallengeProjects/SwiftUIChallenge/SwiftUIChallenge.xcodeproj
 📌 商品名  
 💰 価格  
 
+<img width="700" src="images/05_e_q.png">
+
 **ヒント**
 - VStack を使う
 - AsyncImage で画像を表示する
@@ -118,9 +128,8 @@ open ChallengeProjects/SwiftUIChallenge/SwiftUIChallenge.xcodeproj
 ---
 
 ## ⏳ 取り組み方
-1. まずは **VStack, HStack, ZStack を組み合わせてレイアウトを考える**  
+1. 各課題ごとに 'aView', 'bView', 'cView', 'dView', 'eView' にコードを書く  
 2. `#Preview` を使い、プレビューで確認しながら調整する  
-3. 各課題ごとに `struct ChallengeXView` を作成してコードを書く  
 
 ---
 
