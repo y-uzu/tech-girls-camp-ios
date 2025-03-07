@@ -161,4 +161,4 @@ open CompletedProjects/SwiftUIChallenge/SwiftUIChallenge.xcodeproj
 これで SwiftUI の基本レイアウトの練習は完了です。  
 次のステップでは、応用編として実際のアプリを作ってみます。
 
-➡️ [次へ: 電卓アプリを作ってみよう](./07_calculator_app.md)
+➡️ [次へ: 電卓アプリを作ってみよう](./06_calculator_app.md)
