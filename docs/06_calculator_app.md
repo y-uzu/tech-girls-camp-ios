@@ -100,4 +100,4 @@ open CompletedProjects/CalculatorApp/CalculatorApp.xcodeproj
 
 ## 次のチャレンジ
 
-➡️ [次へ: サーバーと通信するモバイルアプリ](./08_network_intro.md)
+➡️ [次へ: サーバーと通信するモバイルアプリ](./07_network_intro.md)
