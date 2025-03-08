@@ -1,4 +1,3 @@
-
 ![](docs/images/00_key_visual.png)
 
 # 🏁 STORES Tech Girls Camp - Day 1 iOSアプリ開発
