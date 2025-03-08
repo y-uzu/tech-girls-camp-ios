@@ -386,6 +386,30 @@ Toggle("トグルスイッチ", isOn: $toggleValue)
     .toggleStyle(SwitchToggleStyle(tint: .green))
 ```
 
+
+```swift
+import SwiftUI
+
+struct ContentView: View {
+    @State private var sliderValue: Double = 0.5
+    @State private var toggleValue: Bool = true
+    
+    var body: some View {
+        Slider(value: $sliderValue, in: 0...1)
+            .padding()
+            .accentColor(.green)
+        
+        Toggle("トグルスイッチ", isOn: $toggleValue)
+            .toggleStyle(SwitchToggleStyle(tint: .green))
+    }
+}
+
+#Preview {
+    ContentView()
+}
+
+```
+
 <img width="700" src="images/04_slider_toggle.png">
 
 ---
