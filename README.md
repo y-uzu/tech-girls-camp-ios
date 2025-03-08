@@ -30,6 +30,7 @@
 6. [電卓アプリを作ってみよう](./docs/06_calculator_app.md)  
 7. [サーバーと通信するモバイルアプリ](./docs/07_network_intro.md)  
 8. [サーバーと通信するモバイルアプリを作ってみよう](./docs/08_networked_app.md)  
+9. [さらに学んでみたい人へ](./docs/09_further.md)
 
 ---
 
