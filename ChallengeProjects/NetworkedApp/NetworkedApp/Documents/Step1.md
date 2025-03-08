@@ -45,9 +45,30 @@ Step 0 では、 **1つのコーヒーアイテム** を画面に表示しまし
 
 ## 🏗 実装手順
 
-### 1. `CoffeeListView` を作成
+### 1. `CoffeeListView` を作成(すでに用意しています)
 Step 0 では、アプリの最初の画面として `CoffeeItemView` を **1つだけ** 表示していました。  
-今回は **リスト形式** にするため、新しく `CoffeeListView.swift` を作成し、`CoffeeItemView` を **5つ** 並べます。
+今回は **リスト形式** にするため、新しく `CoffeeListView.swift` の中に、`CoffeeItemView` を **5つ** 並べます。
+
+```swift
+import SwiftUI
+
+struct CoffeeListView: View {
+   
+    var body: some View {
+        VStack {
+            CoffeeItemView()
+            CoffeeItemView()
+            CoffeeItemView()
+            CoffeeItemView()
+            CoffeeItemView()
+        }
+    }
+}
+
+#Preview {
+    CoffeeListView()
+}
+```
 
 ---
 
@@ -172,7 +193,7 @@ struct CoffeeListView: View {
 
 ---
 
-### 5. `CoffeeApp.swift` を更新する
+### 5. `NetworkedApp.swift` を更新する
 今までは **1つのコーヒーアイテム** しか表示していませんでした。  
 このステップから、アプリの最初の画面を `CoffeeListView` に変更します。
 
