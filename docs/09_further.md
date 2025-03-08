@@ -43,11 +43,11 @@ SwiftUIを使う上で、Swiftの基本的な知識が必要です。
 
 - **The Swift Programming Language**  
   Apple公式のSwiftのリファレンスドキュメントです。基本から応用まで網羅されています。  
-  [The Swift Programming Language](https://developer.apple.com/swift/)
+  [The Swift Programming Language](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/)
 
 - **Swiftの日本語版**  
   日本語でもリファレンスを確認できます。  
-  [The Swift Programming Language (日本語版)](https://developer.apple.com/library/archive/documentation/Swift/Conceptual/Swift_Programming_Language/)
+  [The Swift Programming Language (日本語版)](https://www.swiftlangjp.com/)
 
 > **SwiftUI Tutorialを終えた後に学ぶのがオススメ**  
 > SwiftUIの基本を学んだ後で、より深くSwiftを理解するためにこのリファレンスを活用してください。
