@@ -144,3 +144,8 @@ open CompletedProjects/NetworkedApp/NetworkedApp.xcodeproj
   例: `UserDefaults` や `CoreData` を使って、お気に入りを保存する
 
 お疲れ様でした！ 🎉
+
+## 今後について
+
+➡️ [次へ: 📚 さらに学んでみたい人へ](./09_further.md)
+
