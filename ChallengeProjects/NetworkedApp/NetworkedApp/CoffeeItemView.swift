@@ -14,7 +14,7 @@ struct CoffeeItemView: View {
     @State var isFavorite: Bool = false
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 0) {
             AsyncImage(url: coffee.image) { phase in
                 switch phase {
                 case .empty:
@@ -33,6 +33,7 @@ struct CoffeeItemView: View {
             }
             .frame(height: 200)
             .frame(maxWidth: .infinity)
+            .contentShape(.rect)
             
             VStack(alignment: .leading, spacing: 10) {
                 HStack {

@@ -53,14 +53,21 @@ Step 0 では、アプリの最初の画面として `CoffeeItemView` を **1つ
 import SwiftUI
 
 struct CoffeeListView: View {
-   
+
     var body: some View {
-        VStack {
-            CoffeeItemView()
-            CoffeeItemView()
-            CoffeeItemView()
-            CoffeeItemView()
-            CoffeeItemView()
+        ScrollView {
+            LazyVStack(spacing: 20) {
+                CoffeeItemView()
+                    .padding(.horizontal)
+                CoffeeItemView()
+                    .padding(.horizontal)
+                CoffeeItemView()
+                    .padding(.horizontal)
+                CoffeeItemView()
+                    .padding(.horizontal)
+                CoffeeItemView()
+                    .padding(.horizontal)
+            }
         }
     }
 }
@@ -91,10 +98,12 @@ struct CoffeeItemView: View {
 表示する内容を変えられるように変更します。
 
 #### **変更後の `CoffeeItemView`**
+
 ```swift
 struct CoffeeItemView: View {
     let coffee: Coffee
 ```
+
 - `let coffee = Coffee(...)` を削除  
 - `let coffee: Coffee` に変更  
 - これにより、**外部からデータを受け取ることができる**
@@ -234,7 +243,7 @@ struct CoffeeItemView: View {
     let coffee: Coffee
 
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 0) {
             AsyncImage(url: coffee.image) { phase in
                 switch phase {
                 case .empty:
@@ -253,6 +262,7 @@ struct CoffeeItemView: View {
             }
             .frame(height: 200)
             .frame(maxWidth: .infinity)
+            .contentShape(.rect)
 
             VStack(alignment: .leading, spacing: 10) {
                 Text(coffee.title)

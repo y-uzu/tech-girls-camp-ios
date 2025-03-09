@@ -2,10 +2,9 @@ import SwiftUI
 
 struct CoffeeItemView: View {
     let coffee: Coffee
-    @State var isFavorite: Bool = false
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 0) {
             AsyncImage(url: coffee.image) { phase in
                 switch phase {
                 case .empty:
@@ -24,6 +23,7 @@ struct CoffeeItemView: View {
             }
             .frame(height: 200)
             .frame(maxWidth: .infinity)
+            .contentShape(.rect)
             
             VStack(alignment: .leading, spacing: 10) {
                 HStack {
@@ -33,13 +33,14 @@ struct CoffeeItemView: View {
                     Button(action: {
                         markAsFavorite()
                     }) {
+                        let isFavorite = FavoriteCoffeeManager.shared.contains(coffee)
                         Image(systemName: isFavorite ? "star.fill" : "star")
                     }
-                    
                 }
                 Text(coffee.description)
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
+                    .multilineTextAlignment(.leading)
                 HStack {
                     ForEach(coffee.ingredients, id: \.self) { ingredient in
                         Text(ingredient)
@@ -58,8 +59,7 @@ struct CoffeeItemView: View {
     }
     
     func markAsFavorite() {
-        isFavorite.toggle()
-        // TODO: お気に入り状態をUserDefault（ローカルDB）に保存する
+        FavoriteCoffeeManager.shared.toggle(coffee)
     }
 }
 

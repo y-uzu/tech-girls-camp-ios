@@ -111,7 +111,7 @@ struct CoffeeListView: View {
 ---
 
 ### 2. `CoffeeDetailView` を作成する
-詳細画面を表示する `CoffeeDetailView.swift` を **新しく作成** し、
+詳細画面を表示する `CoffeeDetailView.swift` を **編集** し、
 選択されたコーヒーの詳細情報を表示できるようにします。
 
 **作成するファイル: `CoffeeDetailView.swift`**

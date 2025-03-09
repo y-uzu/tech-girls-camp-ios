@@ -53,12 +53,15 @@ Xcode のシミュレーターで動かしながら、アプリの動作を確�
 ### 1. Xcode でプロジェクトを開く
 以下の手順で Xcode を起動します。
 
+Finder で `ChallengeProjects/CalculatorApp/` を開いて、  
+`CalculatorApp.xcodeproj` をダブルクリックしてください。
+
+もしくはターミナルを開いて以下のコマンドを入力してください。
+
+
 ```sh
 open ChallengeProjects/CalculatorApp/CalculatorApp.xcodeproj
 ```
-
-もしくは、Finder で `ChallengeProjects/CalculatorApp/` を開いて、  
-`CalculatorApp.xcodeproj` をダブルクリックしてください。
 
 ---
 

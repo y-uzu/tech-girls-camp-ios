@@ -12,12 +12,15 @@
 ### 1. プロジェクトを開く
 以下の手順で Xcode を起動します。
 
+Finder で `ChallengeProjects/NetworkedApp/` を開いて
+`NetworkedApp.xcodeproj` をダブルクリックしてください。
+
+もしくはターミナルを開いて以下のコマンドを入力してください。
+
 ```sh
 open ChallengeProjects/NetworkedApp/NetworkedApp.xcodeproj
 ```
 
-もしくは、Finder で `ChallengeProjects/NetworkedApp/` を開いて
-`NetworkedApp.xcodeproj` をダブルクリックしてください。
 
 ### 2. シミュレーターでアプリを実行する
 - Xcode の画面左上の **再生ボタン ▶️** を押す。
@@ -124,7 +127,7 @@ let coffee = Coffee(
 
 ```swift
 var body: some View {
-    VStack(alignment: .leading) {
+    VStack(alignment: .leading, spacing: 0) {
         AsyncImage(url: coffee.image) { phase in
             switch phase {
             case .empty:
@@ -143,10 +146,11 @@ var body: some View {
         }
         .frame(height: 200)
         .frame(maxWidth: .infinity)
+        .contentShape(.rect)
 ```
 
 #### ここで何をしている？
-- **`VStack(alignment: .leading) { ... }`**
+- **`VStack(alignment: .leading, spacing: 0) { ... }`**
   - **縦に並ぶレイアウト** を作っている。（VStack = 縦方向の積み重ね）
 - **`AsyncImage(url: coffee.image) { ... }`**
   - **インターネットから画像を読み込んで表示** する。

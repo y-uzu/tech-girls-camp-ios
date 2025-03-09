@@ -15,7 +15,7 @@ struct MainTabView: View {
                     Image(systemName: "list.bullet")
                     Text("コーヒー")
                 }
-            Text("お気に入り")
+            FavoriteListView()
                 .tabItem {
                     Image(systemName: "star")
                     Text("お気に入り")

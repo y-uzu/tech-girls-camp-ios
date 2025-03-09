@@ -50,12 +50,15 @@
 ### 1. Xcode でプロジェクトを開く
 以下の手順で Xcode を起動します。
 
+Finder で `ChallengeProjects/SwiftUIChallenge/` を開いて、
+`SwiftUIChallenge.xcodeproj` を **ダブルクリック** してください。
+
+もしくはターミナルを開いて以下のコマンドを入力してください。
+
 ```sh
 open ChallengeProjects/SwiftUIChallenge/SwiftUIChallenge.xcodeproj
 ```
 
-もしくは、Finder で `ChallengeProjects/SwiftUIChallenge/` を開いて、
-`SwiftUIChallenge.xcodeproj` を **ダブルクリック** してください。
 
 ---
 

@@ -57,12 +57,15 @@ SwiftUI を使い、API からコーヒーのデータを取得し、それを�
 ### 1. Xcode でプロジェクトを開く
 以下の手順で Xcode を起動します。
 
+Finder で `ChallengeProjects/NetworkedApp/` を開いて、  
+`NetworkedApp.xcodeproj` をダブルクリックしてください。
+
+もしくはターミナルを開いて以下のコマンドを入力してください。
+
+
 ```sh
 open ChallengeProjects/NetworkedApp/NetworkedApp.xcodeproj
 ```
-
-もしくは、Finder で `ChallengeProjects/NetworkedApp/` を開いて、  
-`NetworkedApp.xcodeproj` をダブルクリックしてください。
 
 ---
 
