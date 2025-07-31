@@ -99,7 +99,7 @@ struct ContentView: View {
 SwiftUIでは、画面の要素を並べるために  
 **VStack（垂直）、HStack（水平）、ZStack（重ねる）** の3つのレイアウトコンテナを使います。
 
-SampleAppのContentViewを自由に書き換えてSwiftUIでのレイアウトを学んでみよう。
+SampleアプリのContentViewを自由に書き換えてSwiftUIでのレイアウトを学んでみよう。
 
 ---
 
@@ -386,7 +386,7 @@ Toggle("トグルスイッチ", isOn: $toggleValue)
     .toggleStyle(SwitchToggleStyle(tint: .green))
 ```
 
-
+### **🔨 実装例**
 ```swift
 import SwiftUI
 

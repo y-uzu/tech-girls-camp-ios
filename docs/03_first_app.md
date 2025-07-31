@@ -15,10 +15,10 @@ SwiftUI を使い、画面にテキストを表示するシンプルなアプリ
 ## 📂 プロジェクトを開こう
 
 前のセクションで作成した Xcode プロジェクトを開きます。  
-プロジェクト名は `SampleApp` にしているはずです。
+プロジェクト名は `Sample` にしているはずです。
 
-1. Finder で `SapmleApp` のフォルダを開く  
-2. `SampleApp.xcodeproj` をダブルクリックして Xcode を起動  
+1. Finder で `Sample` のフォルダを開く  
+2. `Sample.xcodeproj` をダブルクリックして Xcode を起動  
 
 <img width="700" src="images/03_finder_sample.png">
 
