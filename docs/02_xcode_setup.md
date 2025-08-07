@@ -74,7 +74,10 @@ xcode-select --install
    - Organization Identifier: `inc.st`  
    - Interface: SwiftUI  
    - Language: Swift  
+   - Testing System: None
+   - Storage: None
 4. 保存場所を選択し、「Create」をクリック  
+   - 「Create Git repository on my Mac」のチェックを外す
 
 プロジェクトが作成されると、Xcode のメイン画面が表示されます。  
 これで iOS アプリの開発準備が整いました。  

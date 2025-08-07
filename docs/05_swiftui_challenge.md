@@ -149,7 +149,7 @@ open ChallengeProjects/SwiftUIChallenge/SwiftUIChallenge.xcodeproj
 ---
 
 ## ⏳ 取り組み方
-1. 各課題ごとに 'aView', 'bView', 'cView', 'dView', 'eView' にコードを書く  
+1. 各課題ごとに `aView`, `bView`, `cView`, `dView`, `eView` にコードを書く  
 2. `#Preview` を使い、プレビューで確認しながら調整する  
 
 ---
