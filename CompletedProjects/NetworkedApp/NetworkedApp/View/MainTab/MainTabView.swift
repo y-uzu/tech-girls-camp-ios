@@ -20,10 +20,10 @@ struct MainTabView: View {
                     Image(systemName: "star")
                     Text("お気に入り")
                 }
-            Text("tab3")
+            PokemonListView()
                 .tabItem {
-                    Image(systemName: "doc.text")
-                    Text("tab3")
+                    Image(systemName: "text.book.closed.fill")
+                    Text("ポケモン図鑑")
                 }
             Text("tab4")
                 .tabItem {
