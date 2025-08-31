@@ -1,9 +1,9 @@
-import Foundation
+import SwiftUI
 
-struct Coffee: Decodable, Identifiable {
-    var id: Int
-    var title: String
-    var description: String
-    var ingredients: [String]
-    var image: URL
+struct Coffee: Identifiable, Decodable {
+    let id: Int
+    let title: String
+    let description: String
+    let ingredients: [String]
+    let image: URL
 }
