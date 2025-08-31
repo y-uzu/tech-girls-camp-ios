@@ -16,11 +16,14 @@ struct PokemonDetailView: View {
                         ProgressView()
                     }
                     .frame(height: 220)
+                    
                 }
                 
                 // 名前・番号・分類
                 VStack(spacing: 6) {
                     Text("#\(vm.numberText) \(pokemon.displayName)")
+                        .foregroundColor(.blue)
+                        .font(.custom("Avenir", size: 24))
                         .font(.largeTitle).bold()
                         .multilineTextAlignment(.center)
                     if let ja = vm.japaneseName {
@@ -40,13 +43,12 @@ struct PokemonDetailView: View {
                     HStack(spacing: 8) {
                         ForEach(vm.types, id: \.self) { t in
                             Text(typeDisplayName(t))
-                                .font(.subheadline).bold()
-                                .padding(.vertical, 6).padding(.horizontal, 10)
-                                .background(Capsule().fill(.thinMaterial))
-                        }
-                    }
-                }
-                
+                                         .font(.subheadline).bold()
+                                         .padding(.vertical, 6).padding(.horizontal, 10)
+                                         .background(Capsule().fill(.thinMaterial)) // ← ここを変更！
+                                 }
+                             }
+                         }
                 // 基礎データ
                 GroupBox("基本データ") {
                     VStack(alignment: .leading, spacing: 8) {
@@ -85,7 +87,7 @@ struct PokemonDetailView: View {
                             ForEach(vm.stats, id: \.name) { s in
                                 VStack(alignment: .leading, spacing: 4) {
                                     HStack {
-                                        Text(statDisplayName(s.name))
+                                        statLabel(s.name)
                                         Spacer()
                                         Text("\(s.base)")
                                             .monospacedDigit()
@@ -139,21 +141,21 @@ struct PokemonDetailView: View {
                 }
             }
             .padding()
-        }
+        }.background(Color(.teal))// ← 背景色を黄色に
         .navigationTitle(pokemon.displayName)
         .navigationBarTitleDisplayMode(.inline)
         .task {
             await vm.load(id: pokemon.id)
         }
     }
-    
+        
     // 表示用のラベル（最低限）
     private func typeDisplayName(_ t: String) -> String {
         // 必要なら日本語対応テーブルに差し替え
         t.capitalized
     }
-    private func statDisplayName(_ key: String) -> String {
-        switch key {
+    private func statLabel(_ key: String) -> Text {
+        let key = switch key {
         case "hp": "HP"
         case "attack": "こうげき"
         case "defense": "ぼうぎょ"
@@ -162,7 +164,23 @@ struct PokemonDetailView: View {
         case "speed": "すばやさ"
         default: key
         }
+        let name = typeDisplayName(key)
+        return Text(name).foregroundColor(.red)
     }
+    private func typeColor(_ type: String) -> Color {
+        switch type.lowercased() {
+        case "fire": return .red
+        case "water": return .blue
+        case "grass": return .green
+        case "electric": return .yellow
+        case "psychic": return .purple
+        case "ice": return .cyan
+        case "rock": return .brown
+        case "ground": return Color("GroundColor") // カスタムカラーもOK
+        default: return .gray
+        }
+    }
+
 }
 
 @MainActor
@@ -206,6 +224,7 @@ final class PokemonDetailViewModel: ObservableObject {
             if let art = p.sprites.other?.officialArtwork?.frontDefault,
                let url = URL(string: art) {
                 artworkURL = url
+                
             }
             // タイプ
             types = p.types.map { $0.type.name }
