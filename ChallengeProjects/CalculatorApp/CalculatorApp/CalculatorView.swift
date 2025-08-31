@@ -27,25 +27,38 @@ struct CalculatorView: View {
             HStack(spacing: 10) {
                 // 1つ目の入力フィールド
                 // @Stateのついたプロパティには$をつけるというおまじない。
+              
                 TextField("?", text: $firstNumber)
                     .keyboardType(.numberPad)
-                    .frame(width: 60)
+                    .frame(width: 60, height: 40)
+                    .padding(8)
+                    .background(Color.white)
+                    .cornerRadius(20) // ← ここで丸みを指定
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.gray, lineWidth: 1)
+                    )
                     .multilineTextAlignment(.center)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                
+
                 Text("+")
                     .font(.title)
                 
                 // 2つ目の入力フィールド
                 TextField("?", text: $secondNumber)
                     .keyboardType(.numberPad)
-                    .frame(width: 60)
+                    .frame(width: 60, height: 40)
+                    .padding(8)
+                    .background(Color.white)
+                    .cornerRadius(20) // ← ここで丸みを指定
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.gray, lineWidth: 1)
+                    )
                     .multilineTextAlignment(.center)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                
-                Text("=")
+
+                Text("+")
                     .font(.title)
-                
+             
                 // 結果の表示
                 Text(result)
                     .font(.title)
